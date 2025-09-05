@@ -15,7 +15,6 @@ class Member(models.Model):
         ('member', 'Member'),
     ]
     _id = models.AutoField(primary_key=True)
-    MemberId = models.CharField(max_length=100, unique=True)
     Name = models.CharField(max_length=255)
     role = models.CharField(max_length=10, choices=MEMBER_ROLES)
     email = models.EmailField(max_length=100)
@@ -41,7 +40,7 @@ class Event(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField()
     allDay = models.BooleanField(default=False)
-    createdBy = models.ForeignKey(User, on_delete=models.CASCADE)
+    createdBy = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updatedAt = models.DateTimeField(auto_now=True, null=True, blank=True)

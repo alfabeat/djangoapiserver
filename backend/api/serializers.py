@@ -18,9 +18,14 @@ class UserSerializer(serializers.ModelSerializer):
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Member
-        fields = ('_id','MemberId', 'Name', 'role', 'email', 'team', 'createdAt', 'updatedAt')
+        fields = ('_id', 'Name', 'role', 'email', 'team', 'createdAt', 'updatedAt')
         read_only_fields = ('createdAt', 'updatedAt')
-        
+
+class MemberEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Member
+        fields = ('_id',  'Name', 'role', 'email', 'team')
+        read_only_fields = ('_id',)
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
