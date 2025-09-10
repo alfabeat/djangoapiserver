@@ -22,7 +22,7 @@ class MemberListView(generics.ListCreateAPIView):
     """
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-    permission_classes = [IsAuthenticated]  # Only authenticated users can access this view
+    permission_classes = [AllowAny]  # Only authenticated users can access this view
     
     def get_queryset(self):
   
@@ -34,6 +34,8 @@ class MemberListView(generics.ListCreateAPIView):
         else: 
             print(serializer.errors)
             # No additional code needed here for edit functionality.
+            
+
 class MemberDetailView(generics.ListCreateAPIView):
     """
     View to retrieve or update a member by ID.
@@ -100,7 +102,7 @@ class EventListView(generics.ListCreateAPIView):
     """
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [IsAuthenticated]  # Only authenticated users can access this view
+    permission_classes = [AllowAny]  # Only authenticated users can access this view
     
     def get_queryset(self):
   
