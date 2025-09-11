@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-urlpatterns = [
+urlpatterns = [#this the url paths for the api
     path('user/regi/', views.CreateUserView.as_view(), name='create_user'),
     path('members/', views.MemberListView.as_view(), name='member_list'),
     path('members/getid/', views.MemberDetailView.as_view(), name='member_detail'),

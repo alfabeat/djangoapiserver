@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 # //   createdAt?: Date;
 # //   updatedAt?: Date;
 
-class Member(models.Model):
+class Member(models.Model): #This is the model for members
     MEMBER_ROLES = [
         ('senior', 'Senior'),
         ('member', 'Member'),
@@ -34,7 +34,7 @@ class Member(models.Model):
 #   createdAt?: Date;
 #   updatedAt?: Date;
 
-class Event(models.Model):
+class Event(models.Model):#This is the model for events
     _id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     start = models.DateTimeField()

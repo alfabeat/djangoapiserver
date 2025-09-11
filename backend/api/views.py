@@ -8,7 +8,7 @@ from rest_framework.exceptions import ParseError
 from rest_framework.exceptions import NotFound
 from rest_framework.response import Response
 # Create your views here.
-class CreateUserView(generics.CreateAPIView):
+class CreateUserView(generics.CreateAPIView):#these are the views for the different api endpoints and there functionality
     """
     View to create a new user.
     """
