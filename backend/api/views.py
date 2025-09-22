@@ -24,6 +24,7 @@ class MemberListView(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
     permission_classes = [AllowAny]  # Only authenticated users can access this view
     
+    
     def get_queryset(self):
   
         return Member.objects.all()
